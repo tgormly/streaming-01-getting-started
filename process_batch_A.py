@@ -1,7 +1,7 @@
 """
 Batch Process - first transformation
 
-Reads from a file, transform, write to a new file.
+Read from a file, transform, write to a new file.
 
 In this case, covert degree F to degree C.
 

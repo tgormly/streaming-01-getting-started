@@ -37,20 +37,6 @@ def get_source_directory_path():
     dir = os.path.dirname(os.path.abspath(__file__))
     return dir
 
-
-def get_data_directory_path():
-    """Returns the absolute path to the data directory."""
-    datapath = os.sep.join([os.getcwd(), data_folder])
-    return datapath
-
-
-def get_data_file_path(fn):
-    """Return the absolute path to a data file given just the file name (fn)."""
-    dir = get_data_directory_path()
-    fullPath = os.sep.join([dir, fn])
-    return fullPath
-
-
 def get_header(fn):
     """This function prints helpful information about a file."""
     return f"""
@@ -69,29 +55,19 @@ def get_header(fn):
  The Python interpreter is at: 
  {sys.executable}
 
- The active environment should be either conda OR pip (one should be None):
-
-     Active conda env is: {os.environ.get('CONDA_DEFAULT_ENV') }
-     Active pip env is:   {os.environ.get('PIP_DEFAULT_ENV')}
+ Active pip env is:   
+ {os.environ.get('PIP_DEFAULT_ENV')}
  
  The path to the active virtual environment is:
-
  {sys.prefix}
  
  The Current Working Directory (CWD) where this command was launched is:
-
  {os.getcwd()}
  
- The absolute path to the data directory is:
-
- {get_data_directory_path()}
- 
  The absolute path to this source directory is:
-
  {get_source_directory_path()}
  
  The absolute path to this file is:
-
  {fn}
  
 {divider}
