@@ -60,8 +60,8 @@ Once opened, explore - consider these questions:
 1. Where is this README.md file? 
 1. Can you see a .gitignore file? 
 1. What do you think the .gitignore file does? (Hint: open it.)
-1. Review the files and the organization.
-1. Check the file extension (e.g., .py) to see what types of files are included.
+1. Review the repo files and the organization.
+1. Check the file extensions (e.g., .py) to see what types of files are included in this repo.
 
 ## Task 4. Execute the About Script
 
@@ -88,7 +88,7 @@ Like learning any new language, reading is a bit easier than
 writing - we can learn much just by seeing it. 
 By the end of the course, the code will make much more sense. 
 
-When you finish, you'll have an idea of the types of things possible using just the Python standard library. 
+When you finish, you'll have an idea of some things possible using just the Python standard library. 
 You'll have generated several new data files.
 The streaming process will run continuously for quite a while. 
 Read the comments in the file to learn how to stop the process.
