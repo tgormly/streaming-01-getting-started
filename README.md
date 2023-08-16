@@ -13,7 +13,7 @@ get productive as quickly as possible.
 1. VS Code Editor
 1. VS Code Extension: Python (by Microsoft)
 
-## Task 1. Copy this Repo
+## Task 1. Fork
 
 First, we'll copy this repository ("repo") into **your** GitHub account. 
 
@@ -29,9 +29,9 @@ First, we'll copy this repository ("repo") into **your** GitHub account.
 
 Forking is just a term for copying a repo from one account to another.
 
-## Task 2. Clone Your Repo
+## Task 2. Clone
 
-Next, clone your new GitHub repo down to the Documents folder on your local machine. 
+Next, clone **your** new GitHub repo down to the Documents folder on your local machine. 
 
 1. Open VS Code. 
 1. From the menu, select View / Command Palette.
@@ -45,9 +45,9 @@ You can read more about cloning - and clone your repo without VS Code by followi
 When done, verify you have a new folder in your Documents directory:
 `Documents/streaming-01-getting-started`
 
-## Task 3. Explore Repo in VS Code
+## Task 3. Explore
 
-Explore your new project repo in VS Code. 
+Explore your new project repo in VS Code on your local machine. 
 
 If the project is not already open in VS Code, do this:
 
@@ -63,7 +63,9 @@ Once opened, explore - consider these questions:
 1. Review the repo files and the organization.
 1. Check the file extensions (e.g., .py) to see what types of files are included in this repo.
 
-## Task 4. Execute the About Script
+## Task 4. Execute About Script
+
+Execute about.py to generate some useful information.
 
 1. Click on the about.py file to open it for editing.
 1. Right-click on about.py and select "Run Python File in Terminal".
@@ -127,6 +129,10 @@ Then click the checkmark in the upper right to close that file and save your com
 
 ### Option 7B: Use Git Bash or Terminal Commands (Easy as well):
 
+Open a new Git Bash or Terminal window. Run the following commands one at a time.
+They will first add all the files (add "dot"). 
+Then they will commit the changes with a message. 
+Finally, they will push the changes up to GitHub.
 
 ```
 git add .
@@ -140,20 +146,6 @@ git push origin main
 ## General Recommendations and Troubleshooting
 
 The following are general recommendations and troubleshooting tips.
-
-### You Must Be Able to View File Extensions
-
-When negotiating files and folders, you should be able to view file extensions (e.g, .py, .md). 
-If these aren't visible, search for how to view file extensions on your operating system. 
-
-### You Must Be Able to See Hidden Files
-
-You may want to see hidden files. 
-Find this option in the Windows File Explorer ribbon.
-Toggle it in Mac Finder with Command Shift . ("command shift dot").
-
-Your repo has a hidden .git folder that maintains changes to your code.
-Do a web search to learn more as needed.
 
 ### Issue: VS Code - No Source Control Icon
 

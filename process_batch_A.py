@@ -1,71 +1,96 @@
 """
-Batch Process - first transformation
+Batch Process A - First Transformation
 
-Read from a file, transform, write to a new file.
-
-In this case, covert degree F to degree C.
+Read from a file, transform, and write to a new file.
+In this case, convert degrees F to degrees C.
 
 Note: 
-
 This is a batch process, but the file objects we use are 
-also called 'file-like objects' or 'streams'.
+often called 'file-like objects' or 'streams'.
+Streaming differs in that the input data is unbounded.
 
-What makes streaming different is the input data is unbounded.
-
+Use logging, very helpful when working with batch and streaming processes. 
 """
 
+# Import from Python Standard Library
+
 import csv
+import logging
 
-# Declare a variable to hold the input file name
-input_file_name = "batchfile_0_farenheit.csv"
+# Set up basic configuration for logging
 
-# Declare a variable to hold the output file name
-output_file_name = "batchfile_1_celcius.csv"
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
-# Create a file object for input (r = read access)
-input_file = open(input_file_name, "r")
 
-# Create a file object for output (w = write access)
-# On Windows, without newline='', 
-# we'll get an extra line after each record
-output_file = open(output_file_name, "w", newline='')
+# Declare program constants (typically constants are named with ALL_CAPS)
 
-# Create a csv reader for a comma delimited file
-reader = csv.reader(input_file, delimiter=",")
+INPUT_FILE_NAME = "batchfile_0_farenheit.csv"
+OUTPUT_FILE_NAME = "batchfile_1_celcius.csv"
 
-# Create a csv writer for a comma delimited file
-writer = csv.writer(output_file, delimiter=",")
+# Define program functions (bits of reusable code)
 
-# Our file has a header row, move to next to get to data
-header = next(reader)
+def convert_f_to_c(temp_f):
+    """Convert Fahrenheit to Celsius.
+    Use the built-in round() function to round to 2 decimal places
+    Use the built-in float() function to convert the string to a float (a floating point number)
+    All CSV values are read as strings.
+    """
+    logging.debug(f"Calling convert_f_to_c() with {temp_f}.")
+    celsius = round((float(temp_f) - 32.0) * 5.0 / 9.0, 2)
+    logging.debug(f"Converted {temp_f}F to {celsius}C.")
+    return celsius
 
-# Write the header row to the output file
-header_list = ["Year","Month","Day","Time","TempC"]
-writer.writerow(header_list)
 
-# Then, for each data row in the reader
-for row in reader:
+def process_rows(input_file_name, output_file_name):
+    """Read from input file, convert temperature, and write to output file."""
+    logging.info(f"Calling process_rows(): {input_file_name} to {output_file_name}.")
 
-    # set local variables for each column in the row
-    # note: the order of the columns is important
-    #       and must match the order in the input file
-    # We really only care about the temperature column
-    Year, Month, Day, Time, TempF = row
+    # Create a file object for input (r = read access)
+    with open(input_file_name, "r") as input_file:
+        logging.info(f"Opened for reading: {input_file_name}.")
 
-    # convert the temperature from F to C
-    # use the built-in round() function to round to 2 decimal places
-    # use the built-in float() function to 
-    # convert the string (as read) 
-    # to a float (a floating point number) or decimal
-    TempC = round((float(TempF) - 32.0) * 5.0 / 9.0,2)
+        # Create a CSV reader object
+        reader = csv.reader(input_file, delimiter=",")
 
-    # put the values in a list (see the square brackets)
-    # and write the list of values to the output file
-    writer.writerow([Year, Month, Day, Time, TempC])
+        header = next(reader)  # Our file has a header row, move to next to get to data
+        logging.info(f"Skipped header row: {header}")
 
-# close the file objects to release the resources
-# this is important
-# if not closed from this process, 
-# you may not be able to move or delete the file 
-output_file.close()
-input_file.close()
+        # Create a file object for output (w = write access)
+        # Set the newline parameter to an empty string to avoid extra newlines in the output file
+        with open(output_file_name, "w", newline="") as output_file:
+            logging.info(f"Opened for writing: {output_file_name}.")
+
+            # Create a CSV writer object
+            writer = csv.writer(output_file, delimiter=",")
+
+            # Write the header row to the output file
+            writer.writerow(["Year", "Month", "Day", "Time", "TempC"])
+
+            # For each data row in the reader
+            for row in reader:
+                # Extract the values from the input row into named variables
+                Year, Month, Day, Time, TempF = row
+
+                # Call the conversion function, passing in the TempF argument
+                # Assign the return value to a new variable named TempC
+                TempC = convert_f_to_c(TempF)
+
+                # Write the transformed data to the output file
+                writer.writerow([Year, Month, Day, Time, TempC])
+
+
+# ---------------------------------------------------------------------------
+# If this is the script we are running, then call some functions and execute code!
+# ---------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    try:
+        logging.info("===============================================")
+        logging.info("Starting batch process A.")
+        process_rows(INPUT_FILE_NAME, OUTPUT_FILE_NAME)
+        logging.info("Processing complete! Check for new file.")
+        logging.info("===============================================")
+    except Exception as e:
+        logging.error(f"An error occurred: {e}")
