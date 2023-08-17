@@ -11,7 +11,6 @@ get productive as quickly as possible.
 1. Git
 1. Python 3.7+ (3.11+ preferred)
 1. VS Code Editor
-1. VS Code Extension: Python (by Microsoft)
 
 ## Task 1. Fork
 
@@ -65,16 +64,31 @@ Once opened, explore - consider these questions:
 
 ## Task 4. Execute About Script
 
-Execute about.py to generate some useful information.
+Generate some useful information by executing the about.py script.
 
-1. Click on the about.py file to open it for editing.
-1. Right-click on about.py and select "Run Python File in Terminal".
-1. If you get a prompt to install the Python extension, go ahead and install it.
-1. If you get a prompt to select a Python interpreter, select the one you want to use. Your default Python interpreter should be fine.
-1. Watch what happens in the integrated terminal window. 
-1. If successful, you should get a new about.txt file.
-1. Click on the new about.txt file to learn more about your Python environment. 
+1. Click on the about.py file to open it for viewing.
+1. Open a new terminal in VS Code:
+   - If you're on Windows, open a PowerShell or pwsh terminal.
+   - If you're on Linux or MacOS, open a bash terminal.
+1. Type this command in the terminal: `python about.py`
+1. If it doesn't work, try `python3 about.py`
+1. If it doesn't work, try `py about.py`
 
+This is the command you'll use to execute Python scripts in VS Code.
+When you see instructions to run a Python script, use your preferred command instead.
+
+### Install the VS Code Python Extension
+
+If you get a prompt to install the Python extension, install it.
+
+If you're prompted to select a Python interpreter, click the message and choose your default Python installation. 
+
+### Review the Output
+
+Observe the output in the integrated terminal window.
+If successful, a new `about.txt` file will be generated in your working directory.
+
+Click on the new about.txt file to review details about your Python environment.
 For more information about options for executing a Python program in VS Code, see [Run Hello World](https://code.visualstudio.com/docs/python/python-tutorial#_run-hello-world).
 
 ![Selecting an Interpreter](images/streaming-01-select-interpreter.PNG)
@@ -97,39 +111,43 @@ Read the comments in the file to learn how to stop the process.
 
 ## Task 6. Edit the README.md File
 
-Edit this file to keep just the commands and information you need for your machine.
-Generally, keep the prerequisites and task headings, with the commands (or process) that worked on your machine.
-Remove unnecessary instructions once mastered. 
+Edit this README.md file. 
+
+- Keep the prerequisites and task headings. 
+- Within the task headings, keep only the commands that worked on YOUR machine. 
+- Remove unnecessary instructions once you've mastered them.
+- Add any additional notes that will help you in the future.
 
 ## Task 7. Commit Changes and Push to GitHub
 
 Now it's time to get the local work you did on your machine, 
 back up to your cloud repo in GitHub.
 
-With git, we first git add any new files, 
-then git commit them to source control (with a message), 
-then git push them up to GitHub. 
+With git, we first git `add` any new files, 
+then git `commit` them into source control (with a message), 
+then git `push` them up to GitHub. 
 
 ### Option 7A: Use VS Code (Easy!)
 
 1. On the VS Code side panel, click the source control icon (look for a blue bubble with an number in it).
 1. Important! Above the Commit button, it will say "Message". 
-1. You must include a message. 
-1. In that message input box, type "initial results".
+1. You MUST include a commit message. 
+1. In the commit message input box, type "initial results".
 1. Click the down arrow on the blue "Commit" button to "Commit and Push" or "Commit and Sync" it to your GitHub repo. 
 
-Verify: Open a browser to your GitHub repo and see if the files have appeared. 
+Verify: Open a browser to your GitHub repo and verify the files have appeared. 
 In addition to the original files, you should have one or more new files and an edited Markdown file. 
-If not, return to VS Code and edit/execute files as needed.
+If not, return to VS Code and edit/execute files as needed. 
+Then commit and push again.
 
 Common Issue: If your computer hangs because you forgot the commit message, 
 just enter your message in the top line of the file it shows in the editor.
 Then click the checkmark in the upper right to close that file and save your commit message.
-"Sync your changes" to push. 
+"Sync your changes" to push to GitHub. 
 
 ### Option 7B: Use Git Bash or Terminal Commands (Easy as well):
 
-Open a new Git Bash or Terminal window. Run the following commands one at a time.
+Open a new `Git Bash` or Terminal window. Run the following commands one at a time.
 They will first add all the files (add "dot"). 
 Then they will commit the changes with a message. 
 Finally, they will push the changes up to GitHub.
