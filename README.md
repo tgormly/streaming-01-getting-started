@@ -9,7 +9,7 @@ get productive as quickly as possible.
 ## Prerequisites
 
 1. Git
-1. Python 3.7+ (3.11+ preferred)
+1. Python 3.8+ (3.10 preferred)
 1. VS Code Editor
 
 ## Task 1. Fork
@@ -62,20 +62,32 @@ Once opened, explore - consider these questions:
 1. Review the repo files and the organization.
 1. Check the file extensions (e.g., .py) to see what types of files are included in this repo.
 
-## Task 4. Execute About Script
+## Task 4. Execute Check Script
 
-Generate some useful information by executing the about.py script.
+Generate some useful information by executing the 00_check_core.py script.
+You'll need to be connected to the internet for this to work.
+This is an instructor-generated file - you don't need to understand it or edit it.
+It helps confirm that Python has been installed and configured correctly.
 
-1. Click on the about.py file to open it for viewing.
 1. Open a new terminal in VS Code:
-   - If you're on Windows, open a PowerShell or pwsh terminal.
-   - If you're on Linux or MacOS, open a bash terminal.
-1. Type this command in the terminal: `python about.py`
-1. If it doesn't work, try `python3 about.py`
-1. If it doesn't work, try `py about.py`
+   - If Windows, open a PowerShell or pwsh terminal.
+   - If MacOS or Linux, open a bash (or zsh) terminal.
+1. Type the following command in the terminal and hit enter. 
+1. Spaces, spelling, and capitalization matter VERY MUCH. 
 
-This is the command you'll use to execute Python scripts in VS Code.
-When you see instructions to run a Python script, use your preferred command instead.
+```shell
+python 00_check_core.py
+```
+
+If it runs, that's great!  If not, try one of the following to find the Python command that works on your machine. Remember this and use that command instead of `python`. 
+Edit this file in VS Code to keep just the command that worked for you. 
+
+```shell
+python3 00_check_core.py
+py 00_check_core.py
+```
+
+Remember: When you see instructions to run a Python script, use your preferred command instead.
 
 ### Install the VS Code Python Extension
 
@@ -86,18 +98,18 @@ If you're prompted to select a Python interpreter, click the message and choose 
 ### Review the Output
 
 Observe the output in the integrated terminal window.
-If successful, a new `about.txt` file will be generated in your working directory.
+If successful, a new report file will be generated in your project directory.
 
-Click on the new about.txt file to review details about your Python environment.
+Click on the new report file to review details about your Python environment.
 For more information about options for executing a Python program in VS Code, see [Run Hello World](https://code.visualstudio.com/docs/python/python-tutorial#_run-hello-world).
 
 ![Selecting an Interpreter](images/streaming-01-select-interpreter.PNG)
 
 ![Run Python File in Terminal](images/streaming-01-run-python-file-in-terminal.PNG)
 
-## Task 5. Execute the Remaining Scripts in Order
+## Task 5. Execute the Project Scripts in Order
 
-Open, read, and run each remaining Python script (each file will have a .py extension) in order.
+Open, read, and run each project script (each file will have a .py extension) in order.
 You don't need to fully understand the code yet. 
 Instead, try to figure out what each file is doing. 
 Like learning any new language, reading is a bit easier than 
@@ -109,7 +121,7 @@ You'll have generated several new data files.
 The streaming process will run continuously for quite a while. 
 Read the comments in the file to learn how to stop the process.
 
-## Task 6. Edit the README.md File
+## Task 6. Edit README
 
 Edit this README.md file. 
 
