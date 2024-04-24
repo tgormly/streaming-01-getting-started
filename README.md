@@ -41,7 +41,8 @@ Important:
 
 - If Mac/Linux, change `python` to `python3` in the commands below.
 - In Windows, you might try `py` instead of `python`.
-- Share what works.
+- Type each command rather than copy & paste for best results. 
+- Wait for each command to complete before running the next command.
 
 ```shell
 git --version
