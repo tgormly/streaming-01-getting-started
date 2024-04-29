@@ -1,3 +1,6 @@
+# Tim Gormly - 4/29/2024
+<hr>
+
 # streaming-01-getting-started
 
 > Get started with Python for streaming analytics
