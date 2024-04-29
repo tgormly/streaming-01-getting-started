@@ -46,9 +46,13 @@ Important:
 
 ```shell
 git --version
+    git version 2.43.0.windows.1
 git config user.name
+    tgormly
 git config user.email
+    
 python --version
+    Python 3.11.9
 python -m pip install --upgrade pip wheel
 ```
 
