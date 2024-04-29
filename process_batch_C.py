@@ -40,15 +40,36 @@ def convert_k_to_f(temp_k):
     Use the built-in float() function to convert the string to a float (a floating point number)
     All CSV values are read as strings.
     """
-    logging.debug(f"Calling convert_c_to_k() with {temp_k}.")
+    logging.debug(f"Calling convert_k_to_f() with {temp_k}.")
 
-    # convert Kelvin to Celsius
-    celsius = round(float(temp_k)) - 273.15
+    #########################################################
+    # # Option 1
+    # # this was giving results that don't quite match with the original csv.
+    # # convert Kelvin to Celsius
+    # celsius = round(float(temp_k)) - 273.15
 
-    # convert Celsius to Fahrenheit
-    fahrenheit = round(celsius * 9/5 + 32)
-    logging.debug(f"Converted {temp_k}C to {fahrenheit}K.")
-    return fahrenheit
+    # # convert Celsius to Fahrenheit
+    # fahrenheit = round(celsius * 9/5 + 32)
+    # logging.debug(f"Converted {temp_k}K to {fahrenheit}F.")
+    # return fahrenheit    
+    #########################################################
+
+    #########################################################
+    # Option 2
+    # Convert Kelvin to Fahrenheit
+    fahrenheit_temp = (temp_k - 273.15) * 9/5 + 32
+    # Round to the nearest whole degree Fahrenheit
+
+    rounded_fahrenheit_temp = round(fahrenheit_temp)
+    logging.debug(f"Converted {temp_k}K to {rounded_fahrenheit_temp}F.")
+    return rounded_fahrenheit_temp
+    #########################################################
+
+
+
+
+
+
     
 
 
