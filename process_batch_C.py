@@ -75,7 +75,7 @@ def process_rows(input_file_name, output_file_name):
             writer = csv.writer(output_file, delimiter=",")
 
             # Write the header row to the output file
-            writer.writerow(["Year", "Month", "Day", "Time", "TempK"])
+            writer.writerow(["Year", "Month", "Day", "Time", "TempF"])
 
             # For each data row in the reader
             for row in reader:
@@ -84,10 +84,10 @@ def process_rows(input_file_name, output_file_name):
 
                 # Call the conversion function, passing in the TempC argument
                 # Assign the return value to a new variable named TempK
-                TempK = convert_k_to_f(TempK)
+                TempF = convert_k_to_f(TempK)
 
                 # Write the transformed data to the output file
-                writer.writerow([Year, Month, Day, Time, TempK])    
+                writer.writerow([Year, Month, Day, Time, TempF])    
     return
 
 
